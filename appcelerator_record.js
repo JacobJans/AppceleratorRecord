@@ -43,7 +43,7 @@ var AppceleratorRecord = function(args){
 		if( resultSet.rowCount == 0 ){ return []; };
     while(resultSet.isValidRow()) {
 			var copy = eval('new ' + this.klass +'()');
-			for(var i=0; i<resultSet.fieldCount(); i++){ copy[resultSet.fieldName(i)] = resultSet.field(i); }
+			for(var i=0; i<resultSet.fieldCount; i++){ copy[resultSet.fieldName(i)] = resultSet.field(i); }
 			copy.newRecord = false;
 			clones.push(copy);
     	resultSet.next();
